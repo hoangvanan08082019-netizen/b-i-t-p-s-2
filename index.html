@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài tập CSS3</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f7fb;
+      margin: 0;
+    }
+
+    header {
+      background-color: #1e3a5f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #1e3a5f;
+      background-color: #e3efff;
+      font-family: Georgia, "Times New Roman", serif;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 0;
+    }
+
+    nav {
+      display: inline-block;
+      width: 80%;
+      box-sizing: border-box;
+      background-color: #2563a6;
+      padding: 12px 20px;
+    }
+
+    nav img {
+      width: 10%;
+      height: auto;
+      vertical-align: middle;
+      margin-right: 16px;
+    }
+
+    nav a {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #ffd166;
+      text-decoration: underline;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .skip-link:focus {
+      position: static;
+      display: inline-block;
+      width: auto;
+      height: auto;
+      padding: 10px 14px;
+      margin: 8px;
+      background: #fff;
+      color: #111;
+      outline: 3px solid #ffbf47;
+    }
+
+    main {
+      background-color: white;
+      max-width: 1000px;
+      margin: 25px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    h2, h3 {
+      color: #2563a6;
+    }
+
+    /*
+    Kiểu dáng li cũ đã được nhận xét theo yêu cầu bài tập:
+    li {
+      color: #444444;
+      margin-bottom: 8px;
+      padding: 4px;
+    }
+    */
+
+    .grid {
+      display: grid;
+      grid-template-columns: 40% 40%;
+      justify-content: space-around;
+      align-items: start;
+      row-gap: 20px;
+      column-gap: 4%;
+      margin: 20px 0;
+    }
+
+    .grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .grid article {
+      min-width: 0;
+      padding: 12px;
+      background: #eef5ff;
+      border-radius: 8px;
+    }
+
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .flex figure {
+      flex: 1 1 220px;
+      max-width: 280px;
+      margin: 0;
+      padding: 12px;
+      background: #eef5ff;
+      border-radius: 8px;
+    }
+
+    .flex img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #1e3a5f;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        width: 100%;
+      }
+
+      nav img {
+        width: 18%;
+      }
+
+      nav a {
+        margin: 5px 10px 5px 0;
+      }
+
+      main {
+        margin: 10px;
+        padding: 15px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Chuyển đến Nội dung chính</a>
+
+  <header>
+    <h1>Trang web của tôi</h1>
+  </header>
+
+  <nav aria-label="Điều hướng chính">
+    <img src="image.svg" alt="Biểu tượng trang web">
+    <a href="#main-content">Trang chủ</a>
+    <a href="#gioi-thieu">Giới thiệu</a>
+    <a href="#lien-he">Liên hệ</a>
+  </nav>
+
+  <main id="main-content">
+    <section id="gioi-thieu">
+      <h2>Nội dung chính</h2>
+      <p>Chào mừng bạn đến với trang web của tôi.</p>
+
+      <h2>Danh sách nội dung</h2>
+      <ul>
+        <li>Nội dung thứ nhất</li>
+        <li>Nội dung thứ hai</li>
+        <li>Nội dung thứ ba</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="grid-heading">
+      <h2 id="grid-heading">Bố cục Grid hai cột</h2>
+      <div class="grid">
+        <article>
+          <h3>Địa điểm thứ nhất</h3>
+          <img src="image.svg" alt="Hình minh họa địa điểm thứ nhất">
+          <p>Phần nội dung thứ nhất trong bố cục lưới.</p>
+        </article>
+        <article>
+          <h3>Địa điểm thứ hai</h3>
+          <img src="image.svg" alt="Hình minh họa địa điểm thứ hai">
+          <p>Phần nội dung thứ hai trong bố cục lưới.</p>
+        </article>
+        <article>
+          <h3>Địa điểm thứ ba</h3>
+          <img src="image.svg" alt="Hình minh họa địa điểm thứ ba">
+          <p>Phần nội dung thứ ba trong bố cục lưới.</p>
+        </article>
+        <article>
+          <h3>Địa điểm thứ tư</h3>
+          <img src="image.svg" alt="Hình minh họa địa điểm thứ tư">
+          <p>Phần nội dung thứ tư trong bố cục lưới.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="flex-heading">
+      <h2 id="flex-heading">Bố cục Flex</h2>
+      <div class="flex">
+        <figure>
+          <img src="image.svg" alt="Hình minh họa flex thứ nhất">
+          <figcaption>Hình thứ nhất</figcaption>
+        </figure>
+        <figure>
+          <img src="image.svg" alt="Hình minh họa flex thứ hai">
+          <figcaption>Hình thứ hai</figcaption>
+        </figure>
+        <figure>
+          <img src="image.svg" alt="Hình minh họa flex thứ ba">
+          <figcaption>Hình thứ ba</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="lien-he">
+      <h2>Liên hệ</h2>
+      <p>Bản mẫu bài tập CSS3.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Bản quyền thuộc về tôi.</p>
+  </footer>
+</body>
+</html>
